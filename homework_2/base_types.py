@@ -1,3 +1,6 @@
+import sys
+
+
 def arithmetic(arg1, arg2, op):
     if op == '+':
         return arg1 + arg2
@@ -15,3 +18,6 @@ def arithmetic(arg1, arg2, op):
 
 
 print(arithmetic(10, 0, ':'))
+
+print(bool('hello'))
+print(sys.maxsize)
