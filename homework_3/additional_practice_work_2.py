@@ -13,7 +13,7 @@ The rest of the lines should be ignored.
 
 LOG_FILE = os.path.abspath(r'app.log')
 OUTPUT_FILE = LOG_FILE.split('.')[0] + '_output.txt'
-LOG_LEVEL_TO_SKIP = r'[ERROR]'
+LOG_LEVEL = r'[ERROR]'
 
 ip = r'([0-9]{1,3}[\.]){3}[0-9]{1,3}'
 time = r'\d{2}\:\d{2}\:\d{2}\.\d+'
@@ -24,7 +24,7 @@ def parse_log_file(path_to_file):
     with open(path_to_file) as log_file:
         with open(OUTPUT_FILE, 'w') as output_file:
             for row in log_file:
-                if LOG_LEVEL_TO_SKIP not in row:
+                if LOG_LEVEL not in row:
                     continue
                 print(row, end='')
                 row = row.split()
