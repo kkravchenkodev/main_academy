@@ -1,4 +1,10 @@
 venv
+__pycache__
+
+settings.py
+*.log
+
+# IDE files
 .idea
 .idea/inspectionProfiles/
 .idea/main_academy.iml

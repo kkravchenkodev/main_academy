@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Create dict with 5 items, where keys will be country name and value - domain name, i.e. {Ukraine:UA}
 Create another dict with 5 items, where values of countries will be keys, and values will be the capitals i.e. {'UA': 'Kiev'}
