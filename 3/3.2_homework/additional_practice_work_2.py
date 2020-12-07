@@ -26,9 +26,9 @@ def parse_log_file(path_to_file):
         with open(OUTPUT_FILE, 'w') as output_file:
             for row in log_file:
                 if LOG_LEVEL in row:
-                    items = re.compile(ip).findall(row) + re.compile(time).findall(row) + re.compile(msg).findall(row)
-                    # print(' '.join(items))
-                    output_file.write(' '.join(items))
+                    items = re.search(ip, row)
+                    print(items.group())
+                    # output_file.write(' '.join(items))
 
 
 parse_log_file(LOG_FILE)
