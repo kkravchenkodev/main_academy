@@ -3,6 +3,7 @@ __pycache__
 
 settings.py
 *.log
+!app.log
 
 # IDE files
 .idea

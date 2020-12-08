@@ -12,8 +12,8 @@ if [ERROR] is specified as the logging level.
 The rest of the lines should be ignored.
 """
 
-LOG_FILE = os.path.abspath('app.log')
-OUTPUT_FILE = LOG_FILE.split('.')[0] + '_errors.log'
+LOG_FILE = 'app.log'
+OUTPUT_FILE = 'output_errors.log'
 LOG_LEVEL = r'[ERROR]'
 
 ip = r'[0-9]{1,3}[\.][0-9]{1,3}[\.][0-9]{1,3}[\.][0-9]{1,3}'
@@ -26,9 +26,9 @@ def parse_log_file(path_to_file):
         with open(OUTPUT_FILE, 'w') as output_file:
             for row in log_file:
                 if LOG_LEVEL in row:
-                    items = re.search(ip, row)
-                    print(items.group())
-                    # output_file.write(' '.join(items))
+                    items = [re.search(ip, row).group(), re.search(time, row).group(), re.search(msg, row).group()]
+                    # print(' '.join(items), end='')
+                    output_file.write(' '.join(items))
 
 
 parse_log_file(LOG_FILE)
