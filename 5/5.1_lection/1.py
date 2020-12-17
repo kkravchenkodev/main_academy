@@ -10,7 +10,12 @@ b = [2, 3, 4, 5, 6]
 
 
 def intersect(lst_a, lst_b):
-    return set(lst_a) & set(lst_b)
+    target = []
+    for i in lst_a:
+        for j in lst_b:
+            if i == j and i not in target:
+                target.append(i)
+    return target
 
 
 print(intersect(a, b))
