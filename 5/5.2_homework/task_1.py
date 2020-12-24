@@ -30,7 +30,10 @@ months = {
 
 
 def partial_filter(text, dictionary):
-    return [dictionary.get(key) for key in dictionary.keys() if text in key]
+    # way 1
+    return [dictionary.get(key) for key in dictionary.keys() if text.lower() in key]
+
+    # way 2
     # out_list = []
     # for key in dictionary.keys():
     #     if text in key:
@@ -38,4 +41,4 @@ def partial_filter(text, dictionary):
     # return out_list
 
 
-print(partial_filter('un', months))
+print(partial_filter('T', months))
