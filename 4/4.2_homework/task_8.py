@@ -6,3 +6,6 @@ lst_1 = [1, 2, 3]
 lst_2 = [4, 5, 6]
 result: [1, 2, 3, 4, 5, 6]
 """
+for x in range(1, 20, 2):
+    s = '*' * x
+    print(s.center(25))
