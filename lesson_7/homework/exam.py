@@ -8,12 +8,12 @@
 
 
 class Task:
-    def __init__(self):
-        self.__question = ''
-        self.__option1 = ''
-        self.__option2 = ''
-        self.__option3 = ''
-        self.__answer = ''
+    def __init__(self, question='', option1='', option2='', option3='', answer=''):
+        self.__question = question
+        self.__option1 = option1
+        self.__option2 = option2
+        self.__option3 = option3
+        self.__answer = answer
 
     def set_question(self, question):
         self.__question = question
@@ -41,6 +41,7 @@ class Task:
 
 
 def get_exam():
+    correct = 0
     questions = []
     with open('questions', 'r', encoding='UTF-8') as questions_file:
         text = questions_file.readlines()
@@ -72,6 +73,7 @@ def get_exam():
                 print("Entered answer in not an Integer")
                 answers_file.write("Entered answer in not an Integer\n")
             if answer == q.get_answer():
+                correct += 1
                 print(f"Answer {{{answer}}} is CORRECT")
                 answers_file.write(f"Answer {{{answer}}} is CORRECT\n\n")
 
@@ -79,6 +81,8 @@ def get_exam():
                 print(f"Answer {{{answer}}} is WRONG")
                 print(f"Correct answer is - {q.get_answer()}")
                 answers_file.write(f"Answer {{{answer}}} is WRONG\n\n")
+        print(f'\nAmount of correct answers is {{{correct}}} from 10')
+        print(f"Percent is {correct * 10}%")
 
 
 if __name__ == '__main__':
