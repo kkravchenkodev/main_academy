@@ -14,7 +14,7 @@ phrase = sorted(set([i for i in phrase if phrase.count(i) > 1]))
 print(*phrase + ['NO'][len(phrase):])
 
 # OR 2
-phrase = [i for i in input() if i.isdigit()]
+phrase = [i for i in input()]
 phrase = sorted(set(filter(lambda x: x.isdigit() and phrase.count(x) > 1, phrase)))
 print(*phrase + ['NO'][len(phrase):])
 
@@ -22,7 +22,6 @@ print(*phrase + ['NO'][len(phrase):])
 phrase = input()
 count = {}
 for ch in phrase:
-    count.setdefault(ch, 0)
-    count[ch] = count[ch] + 1
+    count[ch] = count.get(ch, 0) + 1
 res = {k: v for k, v in count.items() if k.isdigit() and v > 1}
 print(*sorted(res)) if len(res) > 0 else print('NO')
