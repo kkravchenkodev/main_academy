@@ -36,6 +36,3 @@ def convert_4(filename):
         row.append(''.join(map(str, sample(range(10), 4))))
     print(*fields, sep=';')
     print(*[';'.join(row) for row in rows], sep='\n')
-
-
-
