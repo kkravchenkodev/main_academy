@@ -40,8 +40,6 @@ def kthTerm(n, k):
 
 
 if __name__ == '__main__':
-    print("Example:")
-    print(kthTerm(3, 4))
     assert kthTerm(3, 4) == 9
     assert kthTerm(3, 7) == 13
     assert kthTerm(3, 3) == 4

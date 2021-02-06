@@ -31,33 +31,15 @@ def Cipher_Zeroes(N):
             return 0
 
     zeros = sum(list(map(get_zeros_count, N)))
-    return bin(zeros + 1 if zeros % 2 != 0 else zeros - 1)[2:] if zeros > 0 else 0
+    return bin(zeros + 1 if zeros % 2 != 0 else zeros - 1)[2:] if zeros > 0 else str(0)
 
 
 if __name__ == '__main__':
-    print(Cipher_Zeroes('4900'))
-
-    """
-    	Test	Expected	Got	
-print(Cipher_Zeroes("565"))
-10
-10
-print(Cipher_Zeroes("8200"))
-11
-11
-print(Cipher_Zeroes("4900"))
-100
-100
-print(Cipher_Zeroes("7481"))
-1
-1
-print(Cipher_Zeroes("4"))
-0
-0
-print(Cipher_Zeroes("0"))
-10
-10
-print(Cipher_Zeroes("2628426728"))
-101
-101
-"""
+    assert Cipher_Zeroes("4900") == str(100)
+    assert Cipher_Zeroes("565") == str(10)
+    assert Cipher_Zeroes("8200")== str(11)
+    assert Cipher_Zeroes("4900") == str(100)
+    assert Cipher_Zeroes("7481") == str(1)
+    assert Cipher_Zeroes("4") == str(0)
+    assert Cipher_Zeroes("0") == str(10)
+    assert Cipher_Zeroes("2628426728") == str(101)
