@@ -27,10 +27,9 @@ The kth element of the sequence.
 
 
 def kthTerm(n, k):
-    import math
     lst = []
     i = 0
-    while len(lst) < pow(2, math.ceil(math.log(k, 2))):
+    while len(lst) < k:
         curr = n ** i
         lst.append(curr)
         for each in lst[:-1]:
