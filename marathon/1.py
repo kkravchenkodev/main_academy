@@ -24,3 +24,31 @@ Constraints:
 [output] integer
 The kth element of the sequence.
 """
+
+
+def kthTerm(n, k):
+    import math
+    lst = []
+    i = 0
+    while len(lst) < pow(2, math.ceil(math.log(k, 2))):
+        curr = n ** i
+        lst.append(curr)
+        for each in lst[:-1]:
+            lst.append(curr + each)
+        i += 1
+    return lst[k - 1]
+
+
+if __name__ == '__main__':
+    print("Example:")
+    print(kthTerm(3, 4))
+    assert kthTerm(3, 4) == 9
+    assert kthTerm(3, 7) == 13
+    assert kthTerm(3, 3) == 4
+    assert kthTerm(2, 7) == 7
+    assert kthTerm(4, 3) == 5
+    assert kthTerm(30, 100) == 753300900
+    assert kthTerm(2, 1) == 1
+    assert kthTerm(15, 50) == 810015
+    assert kthTerm(21, 63) == 4288306
+    assert kthTerm(10, 99) == 1100011

@@ -26,3 +26,34 @@ print(is_palindrome("abcab"))       # True
 print(is_palindrome("hello"))       # False
 print(is_palindrome("hollo"))       # True
 print(is_palindrome("racarrrac"))   # True
+
+"""
+	Test	Expected	Got	
+print(isPalindrome("abb"))
+True
+True
+print(isPalindrome("23332"))
+True
+True
+print(isPalindrome("trueitrue"))
+True
+True
+print(isPalindrome("trueistrue"))
+False
+False
+print(isPalindrome("123123"))
+True
+True
+print(isPalindrome("12312"))
+True
+True
+print(isPalindrome("qqqrrr"))
+False
+False
+print(isPalindrome("qqqrrrwww"))
+False
+False
+print(isPalindrome("A"))
+True
+True
+"""

@@ -19,3 +19,45 @@ Constraints:
 [output] integer
 The number of points Nicky will receive in the binary representation.
 """
+
+
+def Cipher_Zeroes(N):
+    def get_zeros_count(i):
+        if int(i) in (0, 6, 9):
+            return 1
+        elif int(i) == 8:
+            return 2
+        else:
+            return 0
+
+    zeros = sum(list(map(get_zeros_count, N)))
+    return bin(zeros + 1 if zeros % 2 != 0 else zeros - 1)[2:] if zeros > 0 else 0
+
+
+if __name__ == '__main__':
+    print(Cipher_Zeroes('4900'))
+
+    """
+    	Test	Expected	Got	
+print(Cipher_Zeroes("565"))
+10
+10
+print(Cipher_Zeroes("8200"))
+11
+11
+print(Cipher_Zeroes("4900"))
+100
+100
+print(Cipher_Zeroes("7481"))
+1
+1
+print(Cipher_Zeroes("4"))
+0
+0
+print(Cipher_Zeroes("0"))
+10
+10
+print(Cipher_Zeroes("2628426728"))
+101
+101
+"""
